@@ -10,10 +10,11 @@ describe('Animal', function(){
 
   describe('#oink', function(){
     it('should oink if it is a pig', function(){
-
+      expect(animal.oink()).toEqual('oink');
     });
     it('should not oink if it is not pig', function(){
-
+      animal.kind='lion'
+      expect(animal.oink()).toEqual('I am not a pig')
     });
   });
 
@@ -50,5 +51,3 @@ describe('Animal', function(){
     });
   });
 });
-
-
