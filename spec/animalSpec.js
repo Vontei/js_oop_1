@@ -20,34 +20,35 @@ describe('Animal', function(){
 
   describe('#growUp', function(){
     it('should increment the age by one', function(){
-
+      expect(animal.growUp()).toEqual(28)
     });
   });
 
   describe('#awake', function(){
     it('should initially be off', function(){
-
+      expect(animal.awake).toEqual(false)
     });
   });
 
-   describe('#wakeUp', function(){
+  describe('#wakeUp', function(){
     it('should change state to awake', function(){
-
+      expect(animal.wakeUp()).toEqual(true)
     });
   });
 
   describe('#sleep', function(){
     it('should initially be sleeping', function(){
-
+      expect(animal.sleep()).toEqual(false)
     });
   });
 
   describe('#feed', function(){
     it('should get fed if awake', function(){
-
+      animal.wakeUp()
+      expect(animal.feed()).toEqual('NOM NOM NOM')
     });
     it('not should get fed if sleeping', function(){
-
+      expect(animal.feed()).toEqual('DONT FEED')
     });
   });
 });
